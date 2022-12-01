@@ -1,13 +1,12 @@
-using MassTransit.Futures.Contracts;
-
 namespace Mira_Common.Settings
 {
     public class MongoDbSettings
     {
-        private string? Username { get; }
-        private string? Password { get; }
-        private string Host { get; }
+        private string? Username { get; init; }
+        private string? Password { get; init; }
+        private string Host { get; init; }
         public int Port { get; init; }
+        
         public string ConnectionString => GetConnectionString();
         
         public string GetConnectionString()
