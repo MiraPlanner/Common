@@ -2,9 +2,9 @@ namespace Mira_Common.Settings
 {
     public class MongoDbSettings
     {
-        private string? Username { get; init; }
-        private string? Password { get; init; }
-        private string Host { get; init; }
+        public string? Username { get; init; }
+        public string? Password { get; init; }
+        public string Host { get; init; }
         public int Port { get; init; }
         
         public string ConnectionString => GetConnectionString();
@@ -13,7 +13,7 @@ namespace Mira_Common.Settings
         {
             if (Username == null || Password == null)
                 return $"mongodb://{Host}:{Port}";
-            return $"{Username}:{Password}@mongodb://{Host}:{Port}";
+            return $"mongodb://{Username}:{Password}@{Host}:{Port}";
         }
     }
 }
