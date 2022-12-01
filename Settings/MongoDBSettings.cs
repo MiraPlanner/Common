@@ -4,16 +4,9 @@ namespace Mira_Common.Settings
 {
     public class MongoDbSettings
     {
-        public MongoDbSettings(string? username, string? password, string? host)
-        {
-            Username = username;
-            Password = password;
-            Host = host;
-        }
-
         private string? Username { get; }
         private string? Password { get; }
-        private string? Host { get; }
+        private string Host { get; }
         public int Port { get; init; }
         public string ConnectionString => GetConnectionString();
         
